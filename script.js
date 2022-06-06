@@ -13,5 +13,6 @@ close.addEventListener('click',function(){
 })
 
 navBtn.addEventListener('click',function(){
-    nav.classList.toggle('show');
+    // nav.classList.toggle('show');
+    document.body.classList.toggle('show');
 })
