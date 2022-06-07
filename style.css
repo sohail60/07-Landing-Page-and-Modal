@@ -2,27 +2,31 @@
     box-sizing: border-box;
 }
 
+/* Styling Main Body */
 body{
     font-family: 'Lato', sans-serif;
     display: flex;
     flex-direction: column;
     height: 100vh;
     margin: 0;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;     /* We will move the body to the left to accomodate the nav bar */
+}
+
+body.show{      /* We will add the show class via JS to the body and when the class is added, body */    
+    transform: translateX(250px);           /* will translate 250px towards x */
 }
 
 .nav-btn{
-    cursor: pointer;
     position: absolute;
     top: 22px;
     left: 22px;
     border: none;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 8px 12px;
-    /* margin: 5px; */
     border-radius: 5px;
-    font-size: 15px;
+    padding: 8px 12px;
+    background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .top-container{
@@ -30,14 +34,12 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* border: 2px solid red; */
+    padding: 25px;
+    margin-bottom: 15px;
     background-color: #30336b;
     color: #fff;
     font-size: 20px;
-    padding: 25px;
-    margin-bottom: 15px;
     text-align: center;
-    /* position: absolute; */
 }
 
 h1{
@@ -45,77 +47,47 @@ h1{
 }
 
 .signup{
-    cursor: pointer;
     margin: 10px;
     padding: 15px 30px;
-    border-radius: 5px;
     border: none;
+    border-radius: 5px;
+    background-color: #be2edd;
     color: #fff;
     font-size: 20px;
-    background-color: #be2edd;
+    cursor: pointer;
 }
 
 .middle-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* width: 800px; */
-    /* padding: 50px; */
-    /* border: 2px solid blue; */
-    /* position: absolute; */
-}
-div{
-    /* border: 2px solid blue; */
 }
 
 p{
-    /* border: 2px solid red; */
-    padding: 0 0;
-    
+    padding: 0 0;    
 }
 
 .content{
-    /* overflow-x: hidden; */
     width: 800px;
     padding: 10px;
-    /* margin: 5px; */
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
 }
 
 h2{
-    /* border: 2px solid yellowgreen; */
-    margin: 5px;
-    
+    margin: 5px;    
 }
 
 /* Styling Nav Bar */
-
 nav{
-    /* border: 2px solid red; */
-    width: 250px;
-    background-color: #30336b;
-    height: 100vh;
-    /* display: none; */
-    position: fixed;
-    z-index: 100;
+    position: fixed;    /* Nav bar is fixed to the body */
     top: 0;
     left: -250px;
-    /* transition: transform 0.3s ease-in-out; */
-}
-
-/* nav.show{
-    transform: translateX(250px);
-} */
-
-body.show{
-    transform: translateX(250px);
+    width: 250px;       /* Nav Bar's width is 250px and it is positioned to -250px left so it is hidden */
+    height: 100vh;      /* normally but when body is translated to 250px towards x */
+    z-index: 100;
+    background-color: #30336b;
 }
 
 .image{
-    /* border: 2px solid blue; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,21 +101,19 @@ img{
 
 nav ul{
     list-style-type: none;
-    /* margin-left: 0px; */
     padding-left: 0px;
     margin: 0;
 }
 
 nav li{
-    /* margin: 25px 10px; */
     padding: 20px 15px;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
 }
 
 a{
-    text-decoration: none;
     color: #fff;
+    text-decoration: none;
 }
 
 a:hover{
@@ -151,74 +121,61 @@ a:hover{
 }
 
 /* Styling Modal */
-
 .modal-container{
-    position: absolute;
+    position: absolute;     /* This takes the entire browser window . It is wrt body */
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    /* height: 100vh; */
-    display: none;
-    /* display: flex; */
-    align-items: center;
+    display: none;      /* Here the display will be changed to flex, so we added align-items and */
+    align-items: center;        /* justify-content to bring the modal to the centre of the page */
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.3);
-    /* border: 2px solid red; */
 }
 
-    .modal{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 500px;
-    }
+.modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+}
     
-    .heading{
-        /* text-align: center; */
-        /* border: 2px solid hotpink; */
-        width: 400px;
-        font-size: 18px;
-        font-weight: bold;
-        background-color: #30336b;
-        color: #fff;
-        padding: 10px;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+.heading{
+    width: 400px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #30336b;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
 .close{
     cursor: pointer;
 }
 
-    .body{
-        /* border: 2px solid red; */
-        background-color: #fff;
-        /* display: flex;
-        flex-direction: column; */
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        width: 400px;
-        
+.body{
+    width: 400px;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
 
-    }
+.body p{
+    padding: 0 20px;
+    margin-top: 40px;
+}
 
-    .body p{
-        padding: 0 20px;
-        margin-top: 40px;
-    }
-
-    .form{
-        /* border: 2px solid red; */
-        display: flex;
-        flex-direction: column;
-        /* align-items: center; */
-        justify-content: center;
-        padding: 20px;
-    }
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
 
 .form-elements{
     padding: 5px;
@@ -227,22 +184,20 @@ a:hover{
 }
 
 #submit{
-    /* width: 100px; */
     margin: auto;
-    background-color: #be2edd;
-    /* border: 2px solid green; */
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    padding: 5px 10px;
-    font-size: 15px;
+    background-color: #be2edd;
     color: #fff;
+    font-size: 15px;
     text-align: center;
     cursor: pointer;
 }
 
+/* Media Query */
 @media (max-width: 800px) {
     .content{
         width: 95%;
     }
 }
-

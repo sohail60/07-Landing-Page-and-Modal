@@ -1,5 +1,4 @@
 const navBtn=document.querySelector('.nav-btn');
-const nav=document.querySelector('.nav');
 const signup=document.querySelector('.signup');
 const close=document.querySelector('.close');
 const modalContainer=document.querySelector('.modal-container');
@@ -13,6 +12,5 @@ close.addEventListener('click',function(){
 })
 
 navBtn.addEventListener('click',function(){
-    // nav.classList.toggle('show');
     document.body.classList.toggle('show');
 })
